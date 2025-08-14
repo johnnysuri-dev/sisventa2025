@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +16,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="vistas/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="vistas/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="vistas/dist/css/AdminLTE.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="vistas/dist/css/skins/_all-skins.min.css">
@@ -23,8 +26,12 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
-<div class="wrapper">
+
+
 <?php
+if (isset($_SESSION['IniciarSesion'])&& $_SESSION['IniciarSesion']=="ok") {
+ echo '<div class="wrapper">';
+
 include "modulos/cabecera.php";
 include "modulos/menu.php";
 if (isset($_GET["ruta"])) {
@@ -40,7 +47,6 @@ if (isset($_GET["ruta"])) {
   }
   else {
     include "modulos/404.php";
-
   }
 }
 else
@@ -50,9 +56,14 @@ else
   }
 
 include "modulos/footer.php";
+
+echo '</div>';
+}else
+{
+include "modulos/login.php";
+}
 ?>
 
-</div>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
