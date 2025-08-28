@@ -29,7 +29,7 @@ session_start();
 
 
 <?php
-if (isset($_SESSION['IniciarSesion'])&& $_SESSION['IniciarSesion']=="ok") {
+if (isset($_SESSION['iniciarSesion'])&& $_SESSION['iniciarSesion']=="ok") {
  echo '<div class="wrapper">';
 
 include "modulos/cabecera.php";
