@@ -29,7 +29,7 @@
         </div>
         <div class="box-body">
         <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped dt reponsive tablas" width="100%">
+              <table id="example1" class="table table-bordered table-striped tablas" width="100%">
                 <thead>
                 <tr>
                   <th>#</th>
@@ -43,59 +43,36 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                  <td>X</td>
-                  <td>X</td>
-                  <td>
+
+                <?php
+
+$item =null;
+$valor=null;
+$usuario= ControladorUsuarios::crtMostrarUsuarios($item, $valor);
+
+    foreach($usuario as $key=>$value){
+    echo'
+    <tr>
+    <td>'.$value["id"].'</td>
+    <td>'.$value["nombre"].'</td>
+    <td>'.$value["usuario"].'</td>';
+    echo '<td><img src="vistas/img/usuarios/default/avatar.png" 
+    class="img-thumbnail" width="40px"></td>';
+    echo '<td>'.$value["perfil"].'</td>';
+    echo '<td>'.$value["estado"].'</td>';
+    echo '<td>'.$value["ultimo_login"].'</td>';
+    echo '<td>
                     <div class="btn-group"> 
                       <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
                       <button class="btn btn-danger"><i class="fa fa-times"></i></button>
                     </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>C</td>
-                  <td>X</td>
-                  <td>X</td>
-                  <td>  <div class="btn-group"> 
-                      <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                    </div>
-                  </td>
-                 
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5.5</td>
-                  <td>A</td>
-                  <td>X</td>
-                  <td>X</td>
-                  <td>
-                      <div class="btn-group"> 
-                      <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                    </div>
-                  </td>
-                </tr>
-               
-               
+                  </td>';
+    }
+
+ 
+                ?>
+                
+
                 </tfoot>
               </table>
             </div>

@@ -24,6 +24,9 @@ session_start();
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
  <!-- Datatables -->
+<script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
 <!-- swweetalert2 Font -->
 <script src="vistas/plugins/swweetalert2/sweetalert2.1.all.js"></script>
@@ -83,6 +86,7 @@ include "modulos/login.php";
 <!-- AdminLTE for demo purposes -->
 <script src="vistas/dist/js/demo.js"></script>
 <script src="vistas/js/plantilla.js"></script>
+
 
 </body>
 </html>

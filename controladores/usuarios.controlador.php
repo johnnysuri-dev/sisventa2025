@@ -87,4 +87,11 @@ class ControladorUsuarios{
         } 
 
     }
+
+    static public function crtMostrarUsuarios($item, $valor){
+        $tabla = "usuarios";
+        $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
+        return $respuesta;
+
+    }
 }
